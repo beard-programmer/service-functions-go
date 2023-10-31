@@ -4,11 +4,11 @@ func NewLineItem(amount int, lineItemKey string) LineItem {
 	return lineItem{amount, lineItemKey}
 }
 
-func NewLineItemWithPolicy(lineItem LineItem, taxPolicy string) LineItemWithPolicy {
+func NewLineItemWithPolicy(amount int, lineItemKey string, taxPolicy string) LineItemWithPolicy {
 	return lineItemWithPolicy{
-		amount:      lineItem.Amount(),
-		lineItemKey: lineItem.LineItemKey(),
-		taxPolicy:   taxPolicy,
+		amount,
+		lineItemKey,
+		taxPolicy,
 	}
 }
 

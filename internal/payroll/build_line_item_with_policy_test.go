@@ -12,19 +12,19 @@ func TestBuildLineItemWithPolicy(t *testing.T) {
 		{
 			name:           "Taxable Line Item",
 			lineItem:       NewLineItem(1000, "salary"),
-			expectedResult: NewLineItemWithPolicy(NewLineItem(1000, "salary"), "TAXABLE"),
+			expectedResult: NewLineItemWithPolicy(1000, "salary", "TAXABLE"),
 			expectErr:      false,
 		},
 		{
 			name:           "Taxable Line Item",
 			lineItem:       NewLineItem(500, "bonus"),
-			expectedResult: NewLineItemWithPolicy(NewLineItem(500, "bonus"), "TAXABLE"),
+			expectedResult: NewLineItemWithPolicy(500, "bonus", "TAXABLE"),
 			expectErr:      false,
 		},
 		{
 			name:           "Exempt Line Item",
 			lineItem:       NewLineItem(500, "meal_voucher"),
-			expectedResult: NewLineItemWithPolicy(NewLineItem(500, "meal_voucher"), "EXEMPT"),
+			expectedResult: NewLineItemWithPolicy(500, "meal_voucher", "EXEMPT"),
 			expectErr:      false,
 		},
 		{
