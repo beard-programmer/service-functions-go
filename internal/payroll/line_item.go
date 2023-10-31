@@ -12,6 +12,10 @@ func NewLineItemWithPolicy(amount int, lineItemKey string, taxPolicy string) Lin
 	}
 }
 
+func NewCalculatedLineItem(amount int, taxable int, exempt int) CalculatedLineItem {
+	return calculatedLineItem{amount, taxable, exempt}
+}
+
 type LineItem interface {
 	Amount() int
 	LineItemKey() string
@@ -20,6 +24,12 @@ type LineItem interface {
 type LineItemWithPolicy interface {
 	LineItem
 	TaxPolicy() string
+}
+
+type CalculatedLineItem interface {
+	Amount() int
+	Taxable() int
+	Exempt() int
 }
 
 func (li lineItem) Amount() int {
@@ -42,6 +52,16 @@ func (li lineItemWithPolicy) TaxPolicy() string {
 	return li.taxPolicy
 }
 
+func (li calculatedLineItem) Amount() int {
+	return li.amount
+}
+func (li calculatedLineItem) Taxable() int {
+	return li.taxable
+}
+func (li calculatedLineItem) Exempt() int {
+	return li.exempt
+}
+
 type lineItem struct {
 	amount      int
 	lineItemKey string
@@ -51,4 +71,10 @@ type lineItemWithPolicy struct {
 	amount      int
 	lineItemKey string
 	taxPolicy   string
+}
+
+type calculatedLineItem struct {
+	amount  int
+	taxable int
+	exempt  int
 }
