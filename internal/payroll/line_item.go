@@ -4,7 +4,7 @@ func NewLineItem(amount int, lineItemKey string) LineItem {
 	return lineItem{amount, lineItemKey}
 }
 
-func NewLineItemWithPolicy(amount int, lineItemKey string, taxPolicy string) LineItemWithPolicy {
+func newLineItemWithPolicy(amount int, lineItemKey string, taxPolicy string) LineItemWithPolicy {
 	return lineItemWithPolicy{
 		amount,
 		lineItemKey,
@@ -12,7 +12,7 @@ func NewLineItemWithPolicy(amount int, lineItemKey string, taxPolicy string) Lin
 	}
 }
 
-func NewCalculatedLineItem(amount int, taxable int, exempt int) CalculatedLineItem {
+func newCalculatedLineItem(amount int, taxable int, exempt int) CalculatedLineItem {
 	return calculatedLineItem{amount, taxable, exempt}
 }
 

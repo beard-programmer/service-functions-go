@@ -1,6 +1,6 @@
 package payroll
 
-func newEmployeePayroll(employeeId int, lineItems []LineItem) EmployeePayroll {
+func NewEmployeePayroll(employeeId int, lineItems []LineItem) EmployeePayroll {
 	return employeePayroll{employeeId, lineItems}
 }
 

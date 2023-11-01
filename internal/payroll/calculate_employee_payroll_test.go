@@ -22,7 +22,7 @@ func TestCalculateEmployeePayroll(t *testing.T) {
 			args: args{
 				BuildLineItemWithPolicy,
 				CalculateTaxes,
-				newEmployeePayroll(1, []LineItem{
+				NewEmployeePayroll(1, []LineItem{
 					NewLineItem(100, "salary"),
 					NewLineItem(150, "bonus"),
 					NewLineItem(200, "meal_voucher"),
@@ -36,7 +36,7 @@ func TestCalculateEmployeePayroll(t *testing.T) {
 			args: args{
 				BuildLineItemWithPolicy,
 				CalculateTaxes,
-				newEmployeePayroll(1, []LineItem{
+				NewEmployeePayroll(1, []LineItem{
 					NewLineItem(100, "UNKNOWN_LINE-iTeM KEy12"),
 					NewLineItem(150, "bonus"),
 					NewLineItem(200, "meal_voucher"),

@@ -11,25 +11,25 @@ func TestCalculateTaxes(t *testing.T) {
 	}{
 		{
 			name:      "Taxable Item",
-			lineItem:  NewLineItemWithPolicy(100, "salary", "TAXABLE"),
-			expected:  NewCalculatedLineItem(100, 100, 0),
+			lineItem:  newLineItemWithPolicy(100, "salary", "TAXABLE"),
+			expected:  newCalculatedLineItem(100, 100, 0),
 			expectErr: false,
 		},
 		{
 			name:      "Taxable Item",
-			lineItem:  NewLineItemWithPolicy(50, "bonus", "TAXABLE"),
-			expected:  NewCalculatedLineItem(50, 50, 0),
+			lineItem:  newLineItemWithPolicy(50, "bonus", "TAXABLE"),
+			expected:  newCalculatedLineItem(50, 50, 0),
 			expectErr: false,
 		},
 		{
 			name:      "Exempt Item",
-			lineItem:  NewLineItemWithPolicy(100, "meal_voucher", "EXEMPT"),
-			expected:  NewCalculatedLineItem(100, 50, 50),
+			lineItem:  newLineItemWithPolicy(100, "meal_voucher", "EXEMPT"),
+			expected:  newCalculatedLineItem(100, 50, 50),
 			expectErr: false,
 		},
 		{
 			name:      "Unknown Tax Policy",
-			lineItem:  NewLineItemWithPolicy(100, "other", "UNKNOWN"),
+			lineItem:  newLineItemWithPolicy(100, "other", "UNKNOWN"),
 			expected:  nil,
 			expectErr: true,
 		},
