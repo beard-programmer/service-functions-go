@@ -6,7 +6,10 @@ Hello. This repo contains code for medium article about [service functions in ru
 
 Here lies source code of simmilar functionallity in golang for comparison and exploration.
 
-[Ruby repo](https://github.com/beard-programmer/service-functions)
+## Related projects
+- Service functions in [Ruby](https://github.com/beard-programmer/service-functions) this is original source that was used in Medium article
+- Service functions in [Golang](https://github.com/beard-programmer/service-functions-go)
+- Service functions in [Elixir](https://github.com/beard-programmer/service-functions-elixir)
 
 ## Dependencies
 - Golang 1.21
