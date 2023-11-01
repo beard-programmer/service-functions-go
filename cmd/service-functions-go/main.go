@@ -13,7 +13,7 @@ func main() {
 		payroll.NewLineItem(150, "bonus"),
 		payroll.NewLineItem(200, "meal_voucher"),
 	})
-	result, err := payroll.CalculateEmployeePayroll(payroll.BuildLineItemWithPolicy, payroll.CalculateTaxes, employeePayroll)
+	result, err := payroll.CalculateEmployeePayroll(payroll.BuildLineItemWithPolicy, payroll.CalculateTaxesWithCorruption, employeePayroll)
 	if err != nil {
 		fmt.Printf("Failed to calculate, reason: %v\n", err)
 	} else {
